@@ -1,6 +1,14 @@
 .dashboard {
-    margin-top: 22px;
+    min-height: calc(100vh - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
 }
 h1 {
-    margin-top: 16px;
+    color: #606060;
+    font-size: 26px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-bottom: 32px;
 }

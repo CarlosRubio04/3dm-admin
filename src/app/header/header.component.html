@@ -10,7 +10,7 @@
 
 
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="side" class="example-sidenav" [fixedInViewport]="true"
+  <mat-sidenav #sidenav mode="over" [(opened)]="opened" class="example-sidenav" [fixedInViewport]="true"
     [fixedTopGap]="0" [fixedBottomGap]="0">
     <button mat-icon-button (click)="sidenav.toggle()" class="close">
       <mat-icon class="icon">close</mat-icon>
@@ -22,21 +22,26 @@
         <mat-card-subtitle>carlos@carlos.com</mat-card-subtitle>
       </mat-card-header>
     </mat-card>
-
+    <mat-list>
+      <mat-list-item routerLink="/dashboard">
+        <mat-icon mat-list-icon color="primary">dashboard</mat-icon>
+        <h4 mat-line>Dashboard</h4>
+      </mat-list-item>
+    </mat-list>
     <mat-accordion>
     
       <mat-expansion-panel [expanded]="true">
         <mat-expansion-panel-header>
-          <mat-icon mat-list-icon>book</mat-icon> Portafolio
+          Portafolio
         </mat-expansion-panel-header>
     
         <mat-list>
           <mat-list-item> 
-            <mat-icon mat-list-icon>add_circle_outline</mat-icon> 
+            <mat-icon mat-list-icon color="primary">add_circle_outline</mat-icon> 
             <h4 mat-line>Agregar item</h4>
           </mat-list-item>
           <mat-list-item> 
-            <mat-icon mat-list-icon>list</mat-icon>
+            <mat-icon mat-list-icon color="primary">list</mat-icon>
             <h4 mat-line>Ver creados</h4>
           </mat-list-item>
         </mat-list>
@@ -45,16 +50,16 @@
     
       <mat-expansion-panel>
         <mat-expansion-panel-header>
-          <mat-icon mat-list-icon>timeline</mat-icon> Promos
+          Promos
         </mat-expansion-panel-header>
     
         <mat-list>
           <mat-list-item>
-            <mat-icon mat-list-icon>add_circle_outline</mat-icon>
+            <mat-icon mat-list-icon color="primary">add_circle_outline</mat-icon>
             <h4 mat-line>Agregar</h4>
           </mat-list-item>
           <mat-list-item>
-            <mat-icon mat-list-icon>list</mat-icon>
+            <mat-icon mat-list-icon color="primary">list</mat-icon>
             <h4 mat-line>Ver creadas</h4>
           </mat-list-item>
         </mat-list>
@@ -63,16 +68,16 @@
 
       <mat-expansion-panel>
         <mat-expansion-panel-header>
-          <mat-icon mat-list-icon>supervised_user_circle</mat-icon> Usuarios
+          Usuarios
         </mat-expansion-panel-header>
       
         <mat-list>
           <mat-list-item routerLink="/singin">
-            <mat-icon mat-list-icon>add_circle_outline</mat-icon>
+            <mat-icon mat-list-icon color="primary">add_circle_outline</mat-icon>
             <h4 mat-line>Agregar</h4>
           </mat-list-item>
           <mat-list-item>
-            <mat-icon mat-list-icon>list</mat-icon>
+            <mat-icon mat-list-icon color="primary">list</mat-icon>
             <h4 mat-line>Ver creadas</h4>
           </mat-list-item>
         </mat-list>
@@ -83,8 +88,12 @@
     
     </mat-accordion>
 
-    <button mat-raised-button color="accent" (click)="logOut()">
-      Cerrar Sesión <mat-icon matSuffix>add_circle_outline</mat-icon>
-    </button>
+    <mat-list>
+      <mat-list-item (click)="logOut()">
+        <mat-icon mat-list-icon color="primary">eject</mat-icon>
+        <h4 mat-line>Cerrar sesión</h4>
+      </mat-list-item>
+    </mat-list>
+
   </mat-sidenav>
 </mat-sidenav-container>
