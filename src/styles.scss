@@ -25,6 +25,14 @@ $main-app-theme: mat-light-theme($main-app-primary, $main-app-accent, $main-app-
 // that you are using.
 @include angular-material-theme($main-app-theme);
 
+h1 {
+    color: #606060;
+    font-size: 26px;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-bottom: 32px;
+}
+
 button:focus {
     outline: none;
     border: none;
@@ -37,4 +45,15 @@ button:focus {
 }
 .mat-list .mat-list-item .mat-list-item-content{
     cursor: pointer !important;
+}
+.mat-form-field {
+    margin-right: 14px;
+}
+
+section {
+    min-height: calc(100vh - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
 }

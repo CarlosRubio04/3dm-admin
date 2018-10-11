@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 
 // Servicios
 import { AuthService } from './services/auth.service';
+import { MainService } from './services/main.service';
 import { GuardService } from './services/guard.service';
 
 // Angular Firebase
@@ -64,6 +65,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { SinginComponent } from './singin/singin.component';
+import { AddPortfolioComponent } from './add-portfolio/add-portfolio.component';
 
 // Routes
 const appRoutes: Routes = [
@@ -71,6 +73,7 @@ const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [GuardService] },
   { path: 'login', component: LoginComponent },
   { path: 'singin', component: SinginComponent, canActivate: [GuardService] },
+  { path: 'add-portfolio', component: AddPortfolioComponent, canActivate: [GuardService] },
 ];
 
 export const firebaseConfig = {
@@ -89,7 +92,8 @@ export const firebaseConfig = {
     DashboardComponent,
     HeaderComponent,
     LoginComponent,
-    SinginComponent
+    SinginComponent,
+    AddPortfolioComponent
   ],
   imports: [
     BrowserModule,
@@ -115,7 +119,7 @@ export const firebaseConfig = {
     RouterModule.forRoot(appRoutes, { useHash: true }),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [ AuthService, GuardService ],
+  providers: [ AuthService, MainService, GuardService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
