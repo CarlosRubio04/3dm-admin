@@ -1,0 +1,90 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>My Admin</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon class="icon">menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" class="example-sidenav" [fixedInViewport]="true"
+    [fixedTopGap]="0" [fixedBottomGap]="0">
+    <button mat-icon-button (click)="sidenav.toggle()" class="close">
+      <mat-icon class="icon">close</mat-icon>
+    </button>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/rem/128.jpg')"></div>
+        <mat-card-title>Carlos Federico Rubio</mat-card-title>
+        <mat-card-subtitle>carlos@carlos.com</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-accordion>
+    
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-icon mat-list-icon>book</mat-icon> Portafolio
+        </mat-expansion-panel-header>
+    
+        <mat-list>
+          <mat-list-item> 
+            <mat-icon mat-list-icon>add_circle_outline</mat-icon> 
+            <h4 mat-line>Agregar item</h4>
+          </mat-list-item>
+          <mat-list-item> 
+            <mat-icon mat-list-icon>list</mat-icon>
+            <h4 mat-line>Ver creados</h4>
+          </mat-list-item>
+        </mat-list>
+    
+      </mat-expansion-panel>
+    
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon mat-list-icon>timeline</mat-icon> Promos
+        </mat-expansion-panel-header>
+    
+        <mat-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon>add_circle_outline</mat-icon>
+            <h4 mat-line>Agregar</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>list</mat-icon>
+            <h4 mat-line>Ver creadas</h4>
+          </mat-list-item>
+        </mat-list>
+    
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-icon mat-list-icon>supervised_user_circle</mat-icon> Usuarios
+        </mat-expansion-panel-header>
+      
+        <mat-list>
+          <mat-list-item routerLink="/singin">
+            <mat-icon mat-list-icon>add_circle_outline</mat-icon>
+            <h4 mat-line>Agregar</h4>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>list</mat-icon>
+            <h4 mat-line>Ver creadas</h4>
+          </mat-list-item>
+        </mat-list>
+      
+      </mat-expansion-panel>
+
+      
+    
+    </mat-accordion>
+
+    <button mat-raised-button color="accent" (click)="logOut()">
+      Cerrar Sesión <mat-icon matSuffix>add_circle_outline</mat-icon>
+    </button>
+  </mat-sidenav>
+</mat-sidenav-container>
