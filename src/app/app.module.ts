@@ -66,6 +66,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { SinginComponent } from './singin/singin.component';
 import { AddPortfolioComponent } from './add-portfolio/add-portfolio.component';
+import { ListPortafolioComponent } from './list-portafolio/list-portafolio.component';
 
 // Routes
 const appRoutes: Routes = [
@@ -74,6 +75,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'singin', component: SinginComponent, canActivate: [GuardService] },
   { path: 'add-portfolio', component: AddPortfolioComponent, canActivate: [GuardService] },
+  { path: 'portfolio', component: ListPortafolioComponent, canActivate: [GuardService] }
 ];
 
 export const firebaseConfig = {
@@ -93,7 +95,8 @@ export const firebaseConfig = {
     HeaderComponent,
     LoginComponent,
     SinginComponent,
-    AddPortfolioComponent
+    AddPortfolioComponent,
+    ListPortafolioComponent
   ],
   imports: [
     BrowserModule,

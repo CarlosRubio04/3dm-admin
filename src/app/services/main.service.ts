@@ -20,6 +20,10 @@ export class MainService {
       });
   }
 
+  public getPortafolio() {
+    return this.afDB.list('data/portfolio/');
+  }
+
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 3000,
