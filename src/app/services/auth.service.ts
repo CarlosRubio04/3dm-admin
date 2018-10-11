@@ -82,6 +82,9 @@ export class AuthService {
   public getUser() {
     return this.angularFireAuth.auth;
   }
+  public getUserData(uid) {
+    return this.afDB.object('users/' + uid);
+  }
 
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
