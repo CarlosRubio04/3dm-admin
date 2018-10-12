@@ -75,7 +75,7 @@ const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [GuardService] },
   { path: 'login', component: LoginComponent },
   { path: 'singin', component: SinginComponent, canActivate: [GuardService] },
-  { path: 'add-portfolio', component: AddPortfolioComponent, canActivate: [GuardService] },
+  { path: 'add-portfolio/:id', component: AddPortfolioComponent, canActivate: [GuardService] },
   { path: 'portfolio', component: ListPortafolioComponent, canActivate: [GuardService] },
   { path: 'add-promo', component: AddPromoComponent, canActivate: [GuardService] },
 ];
