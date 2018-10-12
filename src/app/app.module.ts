@@ -67,15 +67,17 @@ import { LoginComponent } from './login/login.component';
 import { SinginComponent } from './singin/singin.component';
 import { AddPortfolioComponent } from './add-portfolio/add-portfolio.component';
 import { ListPortafolioComponent } from './list-portafolio/list-portafolio.component';
+import { AddPromoComponent } from './add-promo/add-promo.component';
 
 // Routes
 const appRoutes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: '', component: DashboardComponent, canActivate: [GuardService] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [GuardService] },
   { path: 'login', component: LoginComponent },
   { path: 'singin', component: SinginComponent, canActivate: [GuardService] },
   { path: 'add-portfolio', component: AddPortfolioComponent, canActivate: [GuardService] },
-  { path: 'portfolio', component: ListPortafolioComponent, canActivate: [GuardService] }
+  { path: 'portfolio', component: ListPortafolioComponent, canActivate: [GuardService] },
+  { path: 'add-promo', component: AddPromoComponent, canActivate: [GuardService] },
 ];
 
 export const firebaseConfig = {
@@ -96,7 +98,8 @@ export const firebaseConfig = {
     LoginComponent,
     SinginComponent,
     AddPortfolioComponent,
-    ListPortafolioComponent
+    ListPortafolioComponent,
+    AddPromoComponent
   ],
   imports: [
     BrowserModule,

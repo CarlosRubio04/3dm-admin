@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>My Admin</span>
+    <span>3DM</span>
     <span class="example-spacer"></span>
     <button mat-icon-button (click)="sidenav.toggle()">
       <mat-icon class="icon">menu</mat-icon>
@@ -54,11 +54,11 @@
         </mat-expansion-panel-header>
     
         <mat-list>
-          <mat-list-item>
+          <mat-list-item routerLink="/add-promo">
             <mat-icon mat-list-icon color="primary">add_circle_outline</mat-icon>
             <h4 mat-line>Agregar</h4>
           </mat-list-item>
-          <mat-list-item>
+          <mat-list-item routerLink="/promos">
             <mat-icon mat-list-icon color="primary">list</mat-icon>
             <h4 mat-line>Ver creadas</h4>
           </mat-list-item>

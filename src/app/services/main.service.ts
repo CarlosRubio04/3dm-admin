@@ -20,8 +20,22 @@ export class MainService {
       });
   }
 
+  public addPromo(item) {
+    this.afDB.database.ref('data/promos/' + item.id).set(item)
+      .then((response) => {
+        this.openSnackBar('Creado correctamente', response);
+      })
+      .catch((error) => {
+        console.log(error);
+        this.openSnackBar(error, 'Intentar de nuevo');
+      });
+  }
+
   public getPortafolio() {
     return this.afDB.list('data/portfolio/');
+  }
+  public getPromos() {
+    return this.afDB.list('data/promos/');
   }
 
   openSnackBar(message: string, action: string) {
