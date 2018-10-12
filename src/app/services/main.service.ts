@@ -43,6 +43,10 @@ export class MainService {
     return this.afDB.list('data/promos/');
   }
 
+  public getPromoItem(id) {
+    return this.afDB.object('data/promos/' + id);
+  }
+
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 3000,
