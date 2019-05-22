@@ -17,19 +17,83 @@
           <mat-label>Link Suscripción</mat-label>
           <input matInput placeholder="Link Suscripción" [(ngModel)]="portafolio.action">
         </mat-form-field>
-        <p>
+
+        <mat-form-field appearance="outline">
+          <mat-label>URL imagen</mat-label>
+          <input matInput placeholder="Imagen" [(ngModel)]="portafolio.image">
+        </mat-form-field>
+
+      </div>
+      <div class="col-md-12">
           <mat-form-field appearance="outline">
             <mat-label>Descripción</mat-label>
             <textarea matInput placeholder="Descripción" [(ngModel)]="portafolio.description"></textarea>
           </mat-form-field>
-        </p>
-        <p>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <mat-checkbox color="primary" [(ngModel)]="claro.active">TYC CLARO</mat-checkbox>
+        </div>
+        <div *ngIf="claro.active">
+          <mat-form-field appearance="outline">
+            <mat-label>¿Como activar?</mat-label>
+            <textarea matInput  [(ngModel)]="claro.activar"></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>¿Como cancelar?</mat-label>
+            <textarea matInput  [(ngModel)]="claro.cancelar"></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>¿Valor</mat-label>
+            <textarea matInput  [(ngModel)]="claro.valor"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+           <mat-checkbox color="primary"  [(ngModel)]="movistar.active">TYC MOVISTAR</mat-checkbox>
+        </div>
+        <div *ngIf="movistar.active">
+          <mat-form-field appearance="outline">
+            <mat-label>¿Como activar?</mat-label>
+            <textarea matInput  [(ngModel)]="movistar.activar"></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>¿Como cancelar?</mat-label>
+            <textarea matInput  [(ngModel)]="movistar.cancelar"></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>¿Valor</mat-label>
+            <textarea matInput  [(ngModel)]="movistar.valor"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div>
+          <mat-checkbox color="primary" [(ngModel)]="tigo.active">TYC TIGO</mat-checkbox>
+        </div>
+        <div *ngIf="tigo.active">
+          <mat-form-field appearance="outline">
+            <mat-label>¿Como activar?</mat-label>
+            <textarea matInput  [(ngModel)]="tigo.activar"></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>¿Como cancelar?</mat-label>
+            <textarea matInput  [(ngModel)]="tigo.cancelar"></textarea>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>¿Valor</mat-label>
+            <textarea matInput  [(ngModel)]="tigo.valor"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <hr>
           <button mat-raised-button color="primary" (click)="add()">
             {{ ctaText }}
           </button>
-        </p>
+      </div>
 
       </div>
     </div>
-  </div>
 </section>

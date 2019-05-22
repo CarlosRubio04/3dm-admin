@@ -17,6 +17,10 @@ export class AddPortfolioComponent implements OnInit {
     id: Date.now(),
   };
 
+  claro: any = {};
+  movistar: any = {};
+  tigo: any = {};
+
   constructor(private mainService: MainService, private route: ActivatedRoute, router: Router) {
 
     router.events.subscribe((event) => {
@@ -42,6 +46,9 @@ export class AddPortfolioComponent implements OnInit {
       this.ctaText = 'Actualizar Item';
       this.mainService.getPortafolioItem(this.id).valueChanges().subscribe(item => {
         this.portafolio = item;
+        this.claro = this.portafolio.claro;
+        this.movistar = this.portafolio.movistar;
+        this.tigo = this.portafolio.tigo;
       });
     } else {
       this.ctaText = 'Agregar Item';
@@ -54,7 +61,12 @@ export class AddPortfolioComponent implements OnInit {
 
   add() {
     this.ctaText = 'Enviando ...';
+    this.portafolio.claro = this.claro;
+    this.portafolio.movistar = this.movistar;
+    this.portafolio.tigo = this.tigo;
+
     this.mainService.addPortfolio(this.portafolio);
+
     if (this.id === 'new') {
       this.portafolio = {};
       this.ctaText = 'Agregar Item';

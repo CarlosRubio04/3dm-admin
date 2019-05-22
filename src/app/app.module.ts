@@ -115,6 +115,7 @@ export const firebaseConfig = {
     ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
+    MatCheckboxModule,
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
