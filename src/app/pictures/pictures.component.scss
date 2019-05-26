@@ -1,0 +1,24 @@
+.button-file {
+    position: relative;
+    padding: 40px 0;
+
+    input {
+        cursor: pointer;
+        width: 100%;
+        height: 100px;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.pics {
+    position: relative;
+    max-width: 100%;
+    border: 1px solid #eee;
+
+    img {
+        max-width: 100%;
+    }
+}

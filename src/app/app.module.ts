@@ -69,6 +69,8 @@ import { AddPortfolioComponent } from './add-portfolio/add-portfolio.component';
 import { ListPortafolioComponent } from './list-portafolio/list-portafolio.component';
 import { AddPromoComponent } from './add-promo/add-promo.component';
 import { ListPromosComponent } from './list-promos/list-promos.component';
+import { PicturesComponent } from './pictures/pictures.component';
+import { FilesComponent } from './files/files.component';
 
 // Routes
 const appRoutes: Routes = [
@@ -80,6 +82,8 @@ const appRoutes: Routes = [
   { path: 'portfolio', component: ListPortafolioComponent, canActivate: [GuardService] },
   { path: 'add-promo/:id', component: AddPromoComponent, canActivate: [GuardService] },
   { path: 'promos', component: ListPromosComponent, canActivate: [GuardService] },
+  { path: 'pictures', component: PicturesComponent, canActivate: [GuardService]},
+  { path: 'files', component: FilesComponent, canActivate: [GuardService]}
 ];
 
 export const firebaseConfig = {
@@ -102,7 +106,9 @@ export const firebaseConfig = {
     AddPortfolioComponent,
     ListPortafolioComponent,
     AddPromoComponent,
-    ListPromosComponent
+    ListPromosComponent,
+    PicturesComponent,
+    FilesComponent
   ],
   imports: [
     BrowserModule,
