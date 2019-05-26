@@ -69,6 +69,9 @@ export class AddPortfolioComponent implements OnInit {
 
     if (this.id === 'new') {
       this.portafolio = {};
+      this.claro = {};
+      this.movistar = {};
+      this.tigo = {};
       this.ctaText = 'Agregar Item';
     } else {
       this.ctaText = 'Actualizar Item';
