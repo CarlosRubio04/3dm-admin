@@ -17,10 +17,38 @@
           <mat-label>Link TYC</mat-label>
           <input matInput placeholder="Link TYC" [(ngModel)]="promo.action">
         </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Url imágen</mat-label>
+          <input matInput placeholder="Imagen" [(ngModel)]="promo.image">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Operador</mat-label>
+          <input matInput placeholder="Operador" [(ngModel)]="promo.operador">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha</mat-label>
+            <input matInput placeholder="Fecha" [(ngModel)]="promo.date">
+          </mat-form-field>
+        
         <p>
           <mat-form-field appearance="outline">
             <mat-label>Descripción</mat-label>
             <textarea matInput placeholder="Descripción" [(ngModel)]="promo.description"></textarea>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Nombre del Gandaro</mat-label>
+            <input matInput placeholder="Gandor" [(ngModel)]="promo.ganador">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput placeholder="Descripción" [(ngModel)]="promo.gandorDesc"></textarea>
           </mat-form-field>
         </p>
         <p>
